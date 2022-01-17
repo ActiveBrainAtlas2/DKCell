@@ -6,6 +6,7 @@ import sys
 import pickle
 from optparse import OptionParser
 import time
+
 import tensorflow as tf
 from keras import backend as K
 from keras.layers import Input
@@ -23,13 +24,14 @@ import fnmatch
 from scipy.ndimage.interpolation import rotate
 
 from pathlib import Path
-PIPELINE_ROOT = Path('.').absolute()
-print(PIPELINE_ROOT)
-sys.path.append(PIPELINE_ROOT.as_posix())
 
-from keras_frcnn import roi_helpers
-from keras_frcnn import config
-from keras_frcnn import configDK, data_generators
+path_root = Path('.').absolute()
+sys.path.append(str(path_root))
+
+##### these don't exist!
+#from keras_frcnn import roi_helpers
+#from keras_frcnn import config
+#from keras_frcnn import configDK, data_generators
 
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
