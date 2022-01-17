@@ -24,6 +24,7 @@ from scipy.ndimage.interpolation import rotate
 
 from pathlib import Path
 PIPELINE_ROOT = Path('.').absolute()
+print(PIPELINE_ROOT)
 sys.path.append(PIPELINE_ROOT.as_posix())
 
 from keras_frcnn import roi_helpers
