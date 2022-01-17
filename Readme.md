@@ -1,12 +1,13 @@
-Cell Detection based on DK brain CH3
+## CSHL cell detector setup
 
-Trained model : https://drive.google.com/file/d/1iTxR5FNXLKOvGPpwcWkNQOHfIIDP6Z_j/view?usp=sharing
+This python package runs on python2. Here are the necessary steps for installing
+everything on Ubuntu 20.04
 
-Initial Setup Required : https://docs.google.com/document/d/1OWM5lPyydhN-IUMxOW8y7ZL8d8_ZSbUN-6nWqQVEqlI/edit?usp=sharing
-
-Copy these files to the root directory (if not present):
-https://drive.google.com/file/d/1-tkV2Sji0Q5ujR0zQI2NXh3gjJ0RX9IZ/view?usp=sharing
-https://drive.google.com/file/d/1D0MHlPJD5cxjfRRwSqx02ObvdFbfnSYd/view?usp=sharing
-
-To run the code:
-Refer to https://docs.google.com/document/d/1I0-RTK8i9pJ3iufsOdk87v9NPrLsCSqyIbwg2LLnziU/edit?usp=sharing
+1. Install python2.7: `sudo apt install python2`
+1. Get pip2: `wget https://bootstrap.pypa.io/pip/2.7/get-pip.py`
+1. Install pip2 `sudo -H python2 get-pip.py`
+1. Install virtualenv: `sudo -H /usr/local/bin/pip install virtualenv`
+1. Create a virtualenv, you might need to do a chown on the directory first: 
+`virtualenv /usr/local/share/cell_detector`
+1. Get DKCell: `git clone git@github.com:ActiveBrainAtlas2/DKCell.git`
+1. Install requirements: `pip install -r requirements`
