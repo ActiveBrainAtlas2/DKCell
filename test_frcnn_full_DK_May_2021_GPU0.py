@@ -7,16 +7,13 @@ import pickle
 from optparse import OptionParser
 import time
 import tensorflow as tf
-from keras_frcnn import config
 from keras import backend as K
 from keras.layers import Input
 from keras.models import Model
-from keras_frcnn import roi_helpers
 from skimage.io import imread, imsave
 # from skimage.transform import rotate
 from scipy import misc 
 from scipy.io import loadmat
-from keras_frcnn import configDK, data_generators
 import h5py
 import hdf5storage
 import bisect
@@ -24,6 +21,15 @@ import statistics
 from scipy.ndimage.morphology import binary_fill_holes
 import fnmatch
 from scipy.ndimage.interpolation import rotate
+
+from pathlib import Path
+PIPELINE_ROOT = Path('.').absolute()
+sys.path.append(PIPELINE_ROOT.as_posix())
+
+from keras_frcnn import roi_helpers
+from keras_frcnn import config
+from keras_frcnn import configDK, data_generators
+
 
 os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 cfg = tf.ConfigProto()
